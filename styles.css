@@ -1,33 +1,31 @@
 body {
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
+    margin: 0;
+    padding: 0;
     font-family: 'Arial', sans-serif;
-    background-image: url('images/background_wackD.jpg'); /* Ensure the image path is correct */
+    background-image: url('images/background_wackD.jpg');
     background-size: cover;
     background-position: center;
-    filter: none;
-    opacity: 1;
+    min-height: 100vh; /* Ensure full viewport height */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    height: 100vh; /* Use full viewport height */
-    min-height: 100vh; /* Ensure minimum height covers full screen */
+    justify-content: center; /* Center content vertically */
 }
 
 #score, #timer {
-    font-size: 5vw; /* Use viewport width for font size */
+    font-size: 4vw; /* Use viewport width for responsive font size */
     color: #fcce04;
     font-weight: bold;
     text-shadow: 3px 3px 5px #000;
     -webkit-text-stroke: 1px #000;
-    margin: 2vh 0; /* Use viewport height for margin */
+    margin: 2vh 0;
+    text-align: center;
 }
 
 #message {
     text-align: center;
     margin: 2vh auto;
-    font-size: 4vw; /* Use viewport width for font size */
+    font-size: 4vw;
     color: #fcce04;
     font-weight: bold;
     text-shadow: 2px 2px #000;
@@ -38,7 +36,7 @@ button {
     border: 3px solid #5e1818;
     color: #fcce04;
     text-shadow: 2px 2px #000;
-    padding: 1vh 2vw; /* Use viewport units for padding */
+    padding: 1vh 2vw; /* Responsive padding */
     font-size: 2.5vw; /* Responsive font size */
     margin: 3vh 0;
     cursor: pointer;
@@ -63,7 +61,7 @@ button:hover {
 }
 
 .hole {
-    width: 100px; /* Adjusted for smaller screens */
+    width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: #b30707;
@@ -95,12 +93,8 @@ button:hover {
 
 /* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
-    #score, #timer {
+    #score, #timer, #message {
         font-size: 6vw;
-    }
-
-    #message {
-        font-size: 5vw;
     }
 
     button {
