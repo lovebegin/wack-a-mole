@@ -19,6 +19,7 @@ body {
 }
 
 .game-board {
+    margin:20;
     display: grid;
     grid-template-columns: repeat(4, minmax(100px, 1fr)); /* Maximum of 4 columns */
     gap: 2vw;
@@ -68,8 +69,8 @@ button:hover {
 }
 
 .hole {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     background-color: #b30707;
     display: flex;
@@ -103,22 +104,30 @@ button:hover {
     body {
         margin: 60vh 0; /* Add top and bottom margin for medium screens */
     }
-
     #score, #timer, #message {
-        font-size: 6vw;
+        font-size: 8vw;
     }
-
     .game-board {
         grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Adjust columns for medium screens */
     }
+    .hole {
+        width: 100px;
+        height: 100px;
+}
 }
 
 @media (max-width: 480px) {
     body {
         margin: 50vh 0; /* Add more top and bottom margin for small screens */
     }
-
+    #score, #timer, #message {
+        font-size: 6vw;
+    }
     .game-board {
         grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Adjust columns for very small screens */
+    }
+    .hole {
+        width: 80px;
+        height: 80px;
     }
 }
