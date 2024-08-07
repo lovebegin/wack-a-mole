@@ -20,12 +20,12 @@ body {
 
 .game-board {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(4, minmax(100px, 1fr)); /* Maximum of 4 columns */
     gap: 2vw;
     width: 100%;
     max-width: 800px;
+    align-items: center;
     margin: 0 auto; /* Center the grid container */
-    padding: 0 2vw; /* Reduced padding for better alignment */
     box-sizing: border-box;
 }
 
@@ -100,28 +100,25 @@ button:hover {
 
 /* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
+    body {
+        margin: 60vh 0; /* Add top and bottom margin for medium screens */
+    }
+
     #score, #timer, #message {
         font-size: 6vw;
     }
 
-    button {
-        padding: 1.5vh 3vw;
-        font-size: 3vw;
-    }
-
-    .hole {
-        width: 80px;
-        height: 80px;
+    .game-board {
+        grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Adjust columns for medium screens */
     }
 }
 
 @media (max-width: 480px) {
-    .game-board {
-        grid-template-columns: repeat(3, 1fr); /* Adjust columns for very small screens */
+    body {
+        margin: 60vh 0; /* Add more top and bottom margin for small screens */
     }
 
-    .hole {
-        width: 70px;
-        height: 70px;
+    .game-board {
+        grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Adjust columns for very small screens */
     }
 }
