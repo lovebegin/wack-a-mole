@@ -19,7 +19,10 @@ body {
 }
 
 .game-board {
-    margin:0;
+    margin-right:0;
+    margin-left: 2vh; 
+    margin-top: 0;
+    margin-bottom: 0;
     display: grid;
     grid-template-columns: repeat(4, minmax(100px, 1fr)); /* Maximum of 4 columns */
     gap: 2vw;
@@ -57,7 +60,7 @@ button {
     padding: 2vh 4vw;
     font-size: 4vw;
     margin-top: 3vh;
-    margin-bottom: 9vh;   
+    margin-bottom: 9vh;  
     cursor: pointer;
     border-radius: 1rem;
 }
