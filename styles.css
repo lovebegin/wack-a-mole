@@ -20,13 +20,13 @@ body {
 
 .game-board {
     margin-right:0;
-    margin-left: 2vh; 
+    margin-left: 30vh; 
     margin-top: 0;
     margin-bottom: 0;
     display: grid;
     grid-template-columns: repeat(4, minmax(100px, 1fr)); /* Maximum of 4 columns */
     gap: 2vw;
-    width: 100%;
+    width: 80%;
     max-width: 800px;
     align-items: center;
     margin: 0 auto; /* Center the grid container */
@@ -106,7 +106,7 @@ button:hover {
 /* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
     body {
-        margin: 60vh 0; /* Add top and bottom margin for medium screens */
+        margin: 70vh 0; /* Add top and bottom margin for medium screens */
     }
     #score, #timer, #message {
         font-size: 8vw;
@@ -122,7 +122,7 @@ button:hover {
 
 @media (max-width: 480px) {
     body {
-        margin-top: 10vh 0; /* Add more top margin for small screens */
+        margin-top: 0 0; /* Add more top margin for small screens */
         margin-bottom: 0 0; /* Add more bottom margin for small screens */
     }
     #score, #timer, #message {
@@ -130,9 +130,11 @@ button:hover {
     }
     .game-board {
         grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Adjust columns for very small screens */
-    }
+        margin-left: 3vh; 
+        }
     .hole {
         width: 80px;
         height: 80px;
     }
+
 }
