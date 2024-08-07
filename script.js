@@ -66,7 +66,7 @@ function startGame() {
             clearInterval(countdown);
             isPlaying = false;
             startButton.disabled = false;
-            startButton.textContent = "Start Game";
+            startButton.textContent = "Start";
             timeDisplay.textContent = getMessage();
             score > 20 ? highSound.play() : endSound.play();
         }
@@ -95,7 +95,7 @@ holes.forEach(hole => {
             const image = hole.querySelector("img");
             image.classList.add("clicked");
             
-            // Remove the red border after a short delay
+            // Remove the yellow border after a short delay
             setTimeout(() => {
                 image.classList.remove("clicked");
             }, 300);
