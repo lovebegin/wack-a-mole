@@ -115,10 +115,10 @@ button:hover {
 
 @media (max-width: 480px) {
     body {
-        margin: 60vh 0; /* Add more top and bottom margin for small screens */
+        margin: 50vh 0; /* Add more top and bottom margin for small screens */
     }
 
     .game-board {
-        grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Adjust columns for very small screens */
+        grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Adjust columns for very small screens */
     }
 }
