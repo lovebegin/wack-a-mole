@@ -1,3 +1,8 @@
+/* Global Box Sizing */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -5,26 +10,27 @@ body {
     background-image: url('images/background_wackD.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 100vh; /* Ensure full viewport height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center; /* Center horizontally */
     justify-content: center; /* Center vertically */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .game-board {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 2vw;
     width: 100%;
-    max-width: 800px; /* Limit max width for large screens */
+    max-width: 800px;
     margin: 0 auto; /* Center the grid container */
-    padding: 0 5vw; /* Add horizontal padding */
-    box-sizing: border-box; /* Ensure padding is included in width calculations */
+    padding: 0 2vw; /* Reduced padding for better alignment */
+    box-sizing: border-box;
 }
 
 #score, #timer {
-    font-size: 4vw; /* Use viewport width for responsive font size */
+    font-size: 4vw;
     color: #fcce04;
     font-weight: bold;
     text-shadow: 3px 3px 5px #000;
@@ -47,8 +53,8 @@ button {
     border: 3px solid #5e1818;
     color: #fcce04;
     text-shadow: 2px 2px #000;
-    padding: 1vh 2vw; /* Responsive padding */
-    font-size: 2.5vw; /* Responsive font size */
+    padding: 1vh 2vw;
+    font-size: 2.5vw;
     margin: 3vh 0;
     cursor: pointer;
     border-radius: 1rem;
@@ -62,7 +68,7 @@ button:hover {
 }
 
 .hole {
-    width: 100px; /* Adjusted for smaller screens */
+    width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: #b30707;
@@ -111,7 +117,7 @@ button:hover {
 
 @media (max-width: 480px) {
     .game-board {
-        grid-template-columns: repeat(2, 1fr); /* Fewer columns on very small screens */
+        grid-template-columns: repeat(3, 1fr); /* Adjust columns for very small screens */
     }
 
     .hole {
