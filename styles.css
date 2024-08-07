@@ -118,7 +118,8 @@ button:hover {
 
 @media (max-width: 480px) {
     body {
-        margin: 40vh 0; /* Add more top and bottom margin for small screens */
+        margin-top: 10vh 0; /* Add more top margin for small screens */
+        margin-bottom: 0 0; /* Add more bottom margin for small screens */
     }
     #score, #timer, #message {
         font-size: 6vw;
