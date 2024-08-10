@@ -4,33 +4,45 @@
 }
 
 body {
-    margin: 20;
+    margin-top: 60;
+    margin-bottom: 20;
     padding: 20;
     font-family: 'Arial', sans-serif;
-    background-image: url('images/background_wackD.jpg');
+    background-image: url('images/background_big_1920x1080.jpg'); /* Default for Full HD screens */
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
+    min-height: 200vh;
     display: flex;
     flex-direction: column;
     align-items: center; /* Center horizontally */
     justify-content: center; /* Center vertically */
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-
 .game-board {
-    margin-right:0;
-    margin-left: 30vh; 
-    margin-top: 0;
-    margin-bottom: 0;
     display: grid;
     grid-template-columns: repeat(4, minmax(100px, 1fr)); /* Maximum of 4 columns */
     gap: 2vw;
     width: 80%;
     max-width: 800px;
-    align-items: center;
     margin: 0 auto; /* Center the grid container */
+    align-items: center;
     box-sizing: border-box;
+}
+
+/* Vertical Screens (Portrait Orientation) */
+@media (orientation: portrait) {
+    .game-board {
+        grid-template-columns: repeat(3, minmax(100px, 1fr)); /* 3 columns */
+        grid-auto-rows: minmax(100px, auto); /* Ensures rows have a minimum size */
+    }
+}
+
+/* Horizontal Screens (Landscape Orientation) */
+@media (orientation: landscape) {
+    .game-board {
+        grid-template-columns: repeat(5, minmax(100px, 1fr)); /* 5 columns */
+        grid-auto-rows: minmax(100px, auto); /* Ensures rows have a minimum size */
+    }
 }
 
 #score, #timer {
@@ -103,6 +115,43 @@ button:hover {
     border: 5px solid #fcce04;
 }
 
+/* Media Queries for Different Devices */
+@media (min-width: 2560px) {
+    body {
+        background-image: url('images/background_4K_3840x2160.jpg'); /* 4K background */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    body {
+        background-image: url('images/background_ipad_vert_1536x2048.jpg'); /* iPad Retina Portrait */
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    body {
+        background-image: url('images/background_ipad_horiz_2048x1536.jpg'); /* iPad Retina Landscape */
+    }
+}
+
+@media (max-width: 750px) {
+    body {
+        background-image: url('images/background_cell_750x1334.jpg'); /* iPhone 6/7/8 Portrait */
+    }
+}
+
+@media (max-width: 1125px) {
+    body {
+        background-image: url('images/background_cell_1125x2436.jpg'); /* iPhone X/11 Pro Portrait */
+    }
+}
+
+@media (max-width: 1080px) {
+    body {
+        background-image: url('images/background_cell_1080x1920.jpg'); /* Android 1080p HD Portrait */
+    }
+}
+
 /* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
     body {
@@ -117,13 +166,12 @@ button:hover {
     .hole {
         width: 100px;
         height: 100px;
-}
+    }
 }
 
 @media (max-width: 480px) {
     body {
-        margin-top: 0 0; /* Add more top margin for small screens */
-        margin-bottom: 0 0; /* Add more bottom margin for small screens */
+        margin: 0; /* Reset margin for small screens */
     }
     #score, #timer, #message {
         font-size: 7vw;
@@ -131,10 +179,9 @@ button:hover {
     .game-board {
         grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Adjust columns for very small screens */
         margin-left: 3vh; 
-        }
+    }
     .hole {
         width: 80px;
         height: 80px;
     }
-
 }
