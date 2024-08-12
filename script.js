@@ -1,3 +1,20 @@
+console.log("Script loaded");
+console.log(startButton);
+
+// Verify the script is loaded
+console.log("Script is loaded and running");
+
+// Verify the button and elements are selected
+console.log("Start button: ", startButton);
+console.log("Score display: ", scoreDisplay);
+console.log("Timer display: ", timeDisplay);
+
+// Check event listener attachment
+startButton.addEventListener("click", () => {
+    console.log("Start button clicked");
+    startGame();
+});
+
 // Selecting elements from the HTML
 const startButton = document.getElementById("startButton");
 const scoreDisplay = document.getElementById("score");
