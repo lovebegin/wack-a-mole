@@ -9,8 +9,6 @@ const bompSound = document.getElementById("bomp-sound");
 const endSound = document.getElementById("end-sound");
 const highSound = document.getElementById("high-sound");
 
-console.log(startButton, scoreDisplay, timeDisplay, holes, bompSound, endSound, highSound);
-
 let score = 0;
 let time = 30;
 let isPlaying = false;
@@ -48,7 +46,6 @@ function displayImage() {
 
 // Function to start the game
 function startGame() {
-    console.log("Game started"); // Debugging log
     score = 0;
     time = 30;
     isPlaying = true;
@@ -69,7 +66,7 @@ function startGame() {
             clearInterval(countdown);
             isPlaying = false;
             startButton.disabled = false;
-            startButton.textContent = "Start";
+            startButton.textContent = "Start Game";
             timeDisplay.textContent = getMessage();
             score > 20 ? highSound.play() : endSound.play();
         }
@@ -81,7 +78,6 @@ function startGame() {
 
 // Event listener for the start button
 startButton.addEventListener("click", startGame);
-console.log("Event listener added for start button"); // Debugging log
 
 // Event listener for clicking on images
 holes.forEach(hole => {
@@ -99,7 +95,7 @@ holes.forEach(hole => {
             const image = hole.querySelector("img");
             image.classList.add("clicked");
             
-            // Remove the yellow border after a short delay
+            // Remove the red border after a short delay
             setTimeout(() => {
                 image.classList.remove("clicked");
             }, 300);
@@ -112,10 +108,10 @@ function getMessage() {
     if (score === 0) {
         return "You blinked, didn't you?";
     } else if (score < 10) {
-        return "Nice try! Keep practicing!";
+        return "Nice effort! Keep practicing!";
     } else if (score < 20) {
         return "You're getting good at this!";
     } else {
-        return "Wow, you're a Wack-A-Nut champion!";
+        return "Wow, you're a FaceBomp champion!";
     }
 }
