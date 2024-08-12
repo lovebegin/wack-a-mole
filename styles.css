@@ -1,15 +1,17 @@
 body {
-    margin: 50;
-    padding: 0;
+    margin-top: 20;
+    margin-bottom: 20;
+    padding: 20;
     font-family: Arial, sans-serif;
     background-image: url('images/sunburst-backgroundW.jpg'); /* Default for Full HD screens */
     background-size: cover;
     background-position: center;
+    min-height: 130vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     color: #fcce04;
 }
 
@@ -49,8 +51,12 @@ button:hover {
 .game-board {
     display: grid;
     grid-template-columns: repeat(3, 150px);
-    gap: 20px;
-    margin-top: 30px;
+    gap: 2vw;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto; /* Center the grid container */
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .hole {
@@ -83,4 +89,57 @@ button:hover {
 .hole img.clicked {
     border: 5px solid fcce04;
 }
+
+/* Vertical Screens (Portrait Orientation) */
+@media (orientation: portrait) {
+    .game-board {
+        grid-template-columns: repeat(3, minmax(100px, 1fr)); /* 3 columns */
+        grid-auto-rows: minmax(100px, auto); /* Ensures rows have a minimum size */
+    }
+}
+
+
+/* Horizontal Screens (Landscape Orientation) */
+@media (orientation: landscape) {
+    .game-board {
+        grid-template-columns: repeat(5, minmax(100px, 1fr)); /* 5 columns */
+        grid-auto-rows: minmax(100px, auto); /* Ensures rows have a minimum size */
+    }
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    body {
+        margin: 70vh 0; /* Add top and bottom margin for medium screens */
+    }
+    #score, #timer, #message {
+        font-size: 8vw;
+    }
+    .game-board {
+        grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Adjust columns for medium screens */
+    }
+    .hole {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    body {
+        margin: 0; /* Reset margin for small screens */
+    }
+    #score, #timer, #message {
+        font-size: 7vw;
+    }
+    .game-board {
+        grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Adjust columns for very small screens */
+        margin-left: 3vh;
+    }
+    .hole {
+        width: 80px;
+        height: 80px;
+    }
+}
+
 
