@@ -6,7 +6,7 @@ body {
     background-image: url('images/sunburst-backgroundW2.jpg'); /* Default for Full HD screens */
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,7 +110,7 @@ button:hover {
 /* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
     body {
-        margin: 70vh 0; /* Add top and bottom margin for medium screens */
+        margin: 0; /* Add top and bottom margin for medium screens */
     }
     #score, #timer, #message {
         font-size: 8vw;
