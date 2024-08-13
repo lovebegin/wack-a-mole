@@ -1,3 +1,5 @@
+console.log("Script loaded successfully");
+
 // Selecting elements from the HTML first
 const startButton = document.getElementById("startButton");
 const scoreDisplay = document.getElementById("score");
