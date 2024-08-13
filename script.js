@@ -125,7 +125,7 @@ function getMessage() {
     } else if (score < 20) {
         message = "You're getting good at this!";
     } else {
-        message = "Wow, you're a FaceBomp champion!";
+        message = "Wow, you're a Wack-A-Nut champion!";
     }
     console.log(`Generated message based on score ${score}: ${message}`);
     return message;
