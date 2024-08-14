@@ -124,10 +124,9 @@ button:hover {
     }
 }
 
-
 @media (max-width: 480px) {
     body {
-        margin: 0; /* Reset margin for small screens */
+        margin: 20; /* Reset margin for small screens */
     }
     #score, #timer, #message {
         font-size: 8vw;
@@ -140,5 +139,3 @@ button:hover {
         height: 100px;
     }
 }
-
-
