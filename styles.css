@@ -113,14 +113,14 @@ button:hover {
         margin: 0; /* Add top and bottom margin for medium screens */
     }
     #score, #timer, #message {
-        font-size: 8vw;
+        font-size: 9vw;
     }
     .game-board {
         grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Adjust columns for medium screens */
     }
     .hole {
-        width: 100px;
-        height: 100px;
+        width: 125px;
+        height: 125px;
     }
 }
 
@@ -130,15 +130,14 @@ button:hover {
         margin: 0; /* Reset margin for small screens */
     }
     #score, #timer, #message {
-        font-size: 7vw;
+        font-size: 8vw;
     }
     .game-board {
         grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Adjust columns for very small screens */
-        margin-left: 3vh;
     }
     .hole {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
 }
 
